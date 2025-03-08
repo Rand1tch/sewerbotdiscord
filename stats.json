@@ -1,0 +1,70 @@
+{
+    "general": {
+      "start_date": "2025-03-08T12:00:00Z",
+      "uptime": 0,
+      "restarts": 0,
+      "version": "1.0.0"
+    },
+    "messages": {
+      "total_received": 0,
+      "total_sent": 0,
+      "by_type": {
+        "text": 0,
+        "image": 0,
+        "gif": 0
+      },
+      "by_day": {},
+      "peak_time": null,
+      "slowest_time": null
+    },
+    "users": {
+      "total_unique": 0,
+      "most_active": {},
+      "most_mentioned": {},
+      "interaction_count": {}
+    },
+    "words": {
+      "total_corpus_size": 0,
+      "unique_words": 0,
+      "most_common": {},
+      "average_length": 0,
+      "by_user": {}
+    },
+    "reactions": {
+      "profile_usage": {},
+      "response_types": {
+        "greetings": 0,
+        "farewells": 0,
+        "jokes": 0,
+        "confusions": 0,
+        "questions": 0,
+        "reactions.positive": 0,
+        "reactions.negative": 0,
+        "reactions.surprise": 0,
+        "triggers": {}
+      }
+    },
+    "commands": {
+      "total_used": 0,
+      "by_command": {},
+      "by_user": {},
+      "most_common": null
+    },
+    "performance": {
+      "average_response_time": 0,
+      "max_response_time": 0,
+      "memory_usage": {
+        "current": 0,
+        "peak": 0
+      }
+    },
+    "channels": {
+      "most_active": {},
+      "by_channel": {}
+    },
+    "errors": {
+      "total": 0,
+      "types": {},
+      "last_error": null
+    }
+  }

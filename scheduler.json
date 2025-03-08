@@ -1,0 +1,106 @@
+{
+    "tasks": {
+      "backup_data": {
+        "enabled": true,
+        "interval": 3600,
+        "next_run": null,
+        "description": "Регулярное создание резервных копий данных",
+        "action": {
+          "type": "backup",
+          "parameters": {
+            "files": ["bot_data.json", "stats.json", "personality.json"]
+          }
+        }
+      },
+      "clean_old_data": {
+        "enabled": true,
+        "interval": 86400,
+        "next_run": null,
+        "description": "Очистка устаревших данных",
+        "action": {
+          "type": "clean",
+          "parameters": {
+            "older_than": 2592000,
+            "types": ["images", "gifs"]
+          }
+        }
+      },
+      "update_stats": {
+        "enabled": true,
+        "interval": 300,
+        "next_run": null,
+        "description": "Обновление файла статистики",
+        "action": {
+          "type": "update_stats",
+          "parameters": {}
+        }
+      },
+      "daily_message": {
+        "enabled": false,
+        "interval": 86400,
+        "next_run": null,
+        "description": "Ежедневное приветственное сообщение",
+        "time_of_day": "09:00",
+        "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+        "action": {
+          "type": "send_message",
+          "parameters": {
+            "channel_id": null,
+            "message_type": "greetings",
+            "additional_text": "Хорошего дня всем!"
+          }
+        }
+      },
+      "weekly_joke": {
+        "enabled": false,
+        "interval": 604800,
+        "next_run": null,
+        "description": "Еженедельная шутка",
+        "time_of_day": "18:00",
+        "day_of_week": "friday",
+        "action": {
+          "type": "send_message",
+          "parameters": {
+            "channel_id": null,
+            "message_type": "jokes",
+            "prefix": "Шутка недели: "
+          }
+        }
+      },
+      "rotate_personality": {
+        "enabled": false,
+        "interval": 43200,
+        "next_run": null,
+        "description": "Ротация профиля личности",
+        "action": {
+          "type": "change_profile",
+          "parameters": {
+            "random": true,
+            "excluded": ["serious"]
+          }
+        }
+      }
+    },
+    "notifications": {
+      "telegram": {
+        "enabled": true,
+        "levels": ["error", "warning", "info"]
+      },
+      "discord": {
+        "enabled": false,
+        "channel_id": null,
+        "levels": ["error", "warning"]
+      },
+      "log_file": {
+        "enabled": true,
+        "path": "scheduler_log.txt",
+        "levels": ["error", "warning", "info", "debug"]
+      }
+    },
+    "settings": {
+      "timezone": "Europe/Moscow",
+      "retries": 3,
+      "retry_delay": 60,
+      "max_task_duration": 300
+    }
+  }
