@@ -1,0 +1,99 @@
+{
+    "prefix": "!",
+    "commands": {
+      "help": {
+        "description": "Показывает список доступных команд",
+        "usage": "!help [команда]",
+        "example": "!help stats",
+        "permission_level": 0,
+        "enabled": true
+      },
+      "stats": {
+        "description": "Показывает статистику бота",
+        "usage": "!stats [тип]",
+        "example": "!stats messages",
+        "permission_level": 0,
+        "enabled": true,
+        "types": ["messages", "users", "words", "channels", "all"]
+      },
+      "profile": {
+        "description": "Изменяет или показывает профиль личности бота",
+        "usage": "!profile [имя_профиля]",
+        "example": "!profile random",
+        "permission_level": 1,
+        "enabled": true
+      },
+      "add": {
+        "description": "Добавляет новую фразу, шутку или ответ в базу данных",
+        "usage": "!add [категория] [текст]",
+        "example": "!add jokes Колобок повесился",
+        "permission_level": 1,
+        "enabled": true,
+        "categories": ["greetings", "farewells", "jokes", "confusions", "questions", "reactions.positive", "reactions.negative", "reactions.surprise", "triggers"]
+      },
+      "learn": {
+        "description": "Включает или выключает режим обучения",
+        "usage": "!learn [on/off]",
+        "example": "!learn off",
+        "permission_level": 2,
+        "enabled": true
+      },
+      "clear": {
+        "description": "Очищает хранилище сообщений или изображений",
+        "usage": "!clear [тип]",
+        "example": "!clear images",
+        "permission_level": 2,
+        "enabled": true,
+        "types": ["corpus", "images", "gifs", "all"]
+      },
+      "backup": {
+        "description": "Создает резервную копию данных бота",
+        "usage": "!backup",
+        "example": "!backup",
+        "permission_level": 2,
+        "enabled": true
+      },
+      "blacklist": {
+        "description": "Добавляет или удаляет слово из черного списка",
+        "usage": "!blacklist [add/remove] [слово]",
+        "example": "!blacklist add плохоеслово",
+        "permission_level": 2,
+        "enabled": true
+      },
+      "set": {
+        "description": "Устанавливает различные параметры бота",
+        "usage": "!set [параметр] [значение]",
+        "example": "!set randomness 70",
+        "permission_level": 2,
+        "enabled": true,
+        "parameters": ["randomness", "message_length", "response_type", "markov_usage", "mood", "emoji_usage"]
+      },
+      "filter": {
+        "description": "Управляет фильтрами сообщений",
+        "usage": "!filter [add/remove] [тип] [значение]",
+        "example": "!filter add ignore_patterns \\bспам\\b",
+        "permission_level": 2,
+        "enabled": true,
+        "types": ["ignore_patterns", "blacklisted_words", "triggers"]
+      }
+    },
+    "permission_levels": {
+      "0": {
+        "name": "User",
+        "description": "Обычный пользователь, может использовать базовые команды"
+      },
+      "1": {
+        "name": "Moderator",
+        "description": "Модератор, может настраивать некоторые параметры бота"
+      },
+      "2": {
+        "name": "Admin",
+        "description": "Администратор, имеет полный доступ ко всем командам"
+      }
+    },
+    "user_permissions": {
+      "default": 0,
+      "moderators": [],
+      "admins": []
+    }
+  }

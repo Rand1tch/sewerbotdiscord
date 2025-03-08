@@ -1,0 +1,60 @@
+{
+    "enabled": true,
+    "markovify": {
+      "state_size": 2,
+      "retain_original": true,
+      "well_formed": false,
+      "max_words": 20,
+      "min_words": 2
+    },
+    "corpus": {
+      "max_size": 10000,
+      "min_size": 100,
+      "rotation_strategy": "fifo",
+      "backup_interval": 3600,
+      "backup_max_count": 5
+    },
+    "message_processing": {
+      "normalize_case": false,
+      "remove_punctuation": false,
+      "filter_emojis": true,
+      "filter_urls": true,
+      "filter_mentions": true,
+      "filter_commands": true,
+      "min_length": 2,
+      "max_length": 200
+    },
+    "response_generation": {
+      "max_attempts": 15,
+      "max_chars": 200,
+      "max_response_words": 15,
+      "min_response_words": 2,
+      "default_tries": 100
+    },
+    "weights": {
+      "recent_messages": 1.5,
+      "user_specific": 1.0,
+      "channel_specific": 1.0,
+      "predefined_responses": 1.2
+    },
+    "sources": {
+      "user_messages": true,
+      "predefined_phrases": true,
+      "external_corpus": false,
+      "external_corpus_path": "external_corpus.txt",
+      "external_corpus_weight": 0.5
+    },
+    "analytics": {
+      "track_word_frequencies": true,
+      "track_message_patterns": true,
+      "track_user_preferences": true,
+      "sentiment_analysis": false
+    },
+    "adaptive_learning": {
+      "enabled": false,
+      "preferred_responses_boost": 1.2,
+      "track_reactions": false,
+      "reaction_positive_threshold": 2,
+      "reaction_negative_threshold": -1
+    }
+  }
